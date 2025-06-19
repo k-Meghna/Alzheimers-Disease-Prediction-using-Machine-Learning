@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Alzheimer's Risk Screening</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #e9f0f7, #f5f9fd);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      background-color: #ffffff;
+      border-radius: 12px;
+      padding: 30px;
+      width: 90%;
+      max-width: 500px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      text-align: center;
+      color: #1a2a4e;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+
+    .subheading {
+      font-size: 16px;
+      font-weight: bold;
+      color: #2a2a2a;
+      margin-top: 25px;
+      margin-bottom: 10px;
+    }
+
+    .admin-box {
+      background-color: #f9fbff;
+      border: 1px solid #d9e6f2;
+      padding: 20px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+    }
+
+    .admin-box label {
+      font-weight: 600;
+      margin: 10px 0 5px;
+    }
+
+    .admin-box small {
+      display: block;
+      font-size: 11px;
+      color: #666;
+      margin-top: 2px;
+    }
+
+    input[type="submit"] {
+      background-color: #6a82fb;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      border: none;
+      transition: background 0.3s ease;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #5a6edc;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <a href="{{ url_for('about') }}">✔️Know about this tool! </a>
+
+    <h2>Alzheimer's Risk Screening</h2>
+    <form action="/result" method="post">
+      <label>Age</label>
+      <input type="text" name="age" placeholder="e.g. 72">
+
+      <label>Gender</label>
+      <select name="sex">
+        <option value="1">Male</option>
+        <option value="0">Female</option>
+      </select>
+
+      <label>Years of Education (EDUC)</label>
+      <input type="text" name="EDUC" placeholder="e.g. 12">
+
+      <label>Socioeconomic Status (SES)</label>
+      <input type="text" name="SES" placeholder="e.g. 2">
+
+      <h3 class="subheading">Clinical Inputs (for reference)</h3>
+      <div class="admin-box">
+        <label>Mini-Mental State Exam (MMSE)
+          <small>Score assessing cognitive function (0–30)</small>
+        </label>
+        <input type="text" name="MMSE" placeholder="e.g. 27" />
+
+        <label>Estimated Total Intracranial Volume (eTIV)
+          <small>Estimated volume of cranial space (e.g. 1450)</small>
+        </label>
+        <input type="text" name="eTIV" placeholder="e.g. 1450" />
+
+        <label>Normalized Whole Brain Volume (nWBV)
+          <small>Fraction of brain volume (typically 0.6–0.9)</small>
+        </label>
+        <input type="text" name="nWBV" placeholder="e.g. 0.75" />
+
+        <label>Atlas Scaling Factor (ASF)
+          <small>Scaling factor for individual brain variation</small>
+        </label>
+        <input type="text" name="ASF" placeholder="e.g. 1.10" />
+      </div>
+
+      <input type="submit" value="Check My Risk">
+    </form>
+  </div>
+</body>
+</html>

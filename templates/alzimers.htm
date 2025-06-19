@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Diagnosis Result</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #2f2f2f, #1f1f1f);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      padding: 40px 30px;
+      width: 90%;
+      max-width: 550px;
+      border-radius: 14px;
+      box-shadow: 0 0 40px rgba(0, 0, 0, 0.35);
+      color: #eee;
+      animation: fadeIn 1.2s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h1 {
+      color: #ff9f68;
+      font-size: 24px;
+      text-align: center;
+      margin-bottom: 8px;
+    }
+
+    .icon {
+      font-size: 32px;
+      text-align: center;
+      margin-bottom: 10px;
+      color: #f5c791;
+    }
+
+    p {
+      font-size: 15px;
+      margin: 10px 0;
+      color: #ddd;
+    }
+
+    ul {
+      margin-top: 12px;
+      padding-left: 20px;
+      color: #ddd;
+      font-size: 14px;
+    }
+
+    li {
+      margin-bottom: 6px;
+    }
+
+    a {
+      display: block;
+      text-align: center;
+      margin-top: 20px;
+      color: #ffb877;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="icon">🧠</div>
+    <h1 style="margin-bottom: 12px;">Diagnosis Result</h1>
+    <p style="font-size:16px; text-align: center ;color:#ff9999; font-weight:bold; margin-bottom: 8px 0 12px;"><strong>
+    Possible Alzheimer’s Detected.
+  </p></strong></p>
+
+    <p><strong>Based on your inputs, this tool has identified patterns that may indicate early signs of cognitive decline or Alzheimer's risk.</strong></p>
+    <p>This is not a diagnosis — please consult a healthcare provider for a full evaluation.</p>
+    <p><strong>Helpful Next Steps:</strong></p>
+    <ul>
+      <li>✔️ Talk to a licensed medical professional</li>
+      <li>✔️ Eat a brain-supportive diet (e.g., leafy greens, omega-3)</li>
+      <li>✔️ Keep physically and mentally active daily</li>
+      <li>✔️ Prioritize quality sleep and stress management</li>
+      <li>✔️ Track memory and behavior patterns</li>
+      <li>✔️ Stay socially connected</li>
+    </ul>
+    <a href="/">← Return to screening</a>
+  </div>
+</body>
+</html>

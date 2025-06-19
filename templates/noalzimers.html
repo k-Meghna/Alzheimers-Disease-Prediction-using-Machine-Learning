@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Diagnosis Result</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #1c1c1c, #3a3a3a);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      padding: 40px 30px;
+      width: 90%;
+      max-width: 550px;
+      text-align: center;
+      border-radius: 14px;
+      box-shadow: 0 0 40px rgba(0, 0, 0, 0.35);
+      z-index: 1;
+    }
+
+    h1 {
+      color: #58d68d;
+      font-size: 24px;
+      margin-bottom: 12px;
+    }
+
+    p {
+      color: #ddd;
+      font-size: 15px;
+      margin: 10px 0;
+    }
+
+    a {
+      margin-top: 20px;
+      display: inline-block;
+      color: #90ee90;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .confetti {
+      position: absolute;
+      top: -10px;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      position: absolute;
+      animation: fall 3s infinite;
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(0) rotate(0); opacity: 1; }
+      100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Diagnosis Result</h1>
+    <p><strong>No signs of Alzheimer’s were detected at this time. 🎉</strong></p>
+    <p>Everything look good. Keep up the healthy habits. You're doing great!</p>
+    <p style="text-align:center; font-size:13px; color:#aaa; margin-top: 20px;">
+  This result is based on your responses and does not replace professional medical advice.
+</p>
+
+    <a href="/">← Return to screening.</a>
+  </div>
+
+  <div class="confetti" id="confetti"></div>
+
+  <script>
+    const confetti = document.getElementById('confetti');
+    const colors = ['#58d68d', '#7fffd4', '#90ee90', '#00fa9a', '#98fb98'];
+
+    for (let i = 0; i < 60; i++) {
+      const dot = document.createElement('div');
+      dot.className = 'dot';
+      dot.style.left = `${Math.random() * 100}%`;
+      dot.style.background = colors[Math.floor(Math.random() * colors.length)];
+      dot.style.animationDelay = `${Math.random() * 3}s`;
+      confetti.appendChild(dot);
+    }
+  </script>
+</body>
+</html>
